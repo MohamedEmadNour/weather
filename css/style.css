@@ -1,0 +1,53 @@
+
+body {
+    /* background-color: azure; */
+    box-sizing: border-box;
+    
+}
+a {
+ text-decoration: none;
+ /* color: white; */
+}
+header > div {
+    background-image: url(../Img/Dev.jpg);
+    background-size: 100%;
+}
+
+
+/* ....................................... */
+#Hero {
+    /* transform: translateY(-30%); */
+    margin-top: -12%;
+   
+}
+.SHOD {
+    box-shadow: 2px 2px 20px black ;
+}
+.labelflote{
+    position: absolute;
+    top: 50%;
+    right: 15%;
+}
+section .degree p {
+    font-size: 400%;
+}
+section .degree i {
+    font-size: 400%;
+}
+.smalldeg h6 {
+    font-size: 5px;
+}
+
+footer ul li {
+    margin-right: 3%;
+    font-size: 150%;
+}
+
+@media screen and (max-width : 800px) {
+    #Hero {
+        /* transform: translateY(-30%); */
+        margin-top: -20%;
+       
+    }
+    
+}

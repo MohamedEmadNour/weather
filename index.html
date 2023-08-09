@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Fonts/Lugrasimo-Regular.ttf" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/anim.css" />
+    <link rel="stylesheet" href="./css/tailwind-all.min.css">
+    <link rel="stylesheet" href="./Icon/bootstrap-icons.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Weather</title>
+  </head>
+  <body data-spy="scroll" data-target="#scroll-spy" >
+    <nav class="navbar  ">
+      <div class="container-fluid d-flex justify-content-around p-3">
+        <div class="navbar-brand" >
+          <a href="#"> 
+          <img width="30%" src="./Img/png-transparent-weather-forecasting-severe-weather-storm-weather-free-text-heart-logo-thumbnail.png" alt="Weather img">Weather
+          </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 ">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header>
+      <div class="h-64 text-center  container rounded-5">
+        <div class="position-relative">
+          <input class=" mt-4 w-75 h-12 p-3 rounded-3" type="search" name="search" id="searchInbut">
+          <label class=" labelflote" for="search"> Find </label>
+        </div>
+      </div>
+    </header>
+    <section id="Hero" class=" d-flex justify-content-center">
+      <div class="bg-blue-100 SHOD w-75 rounded-5 overflow-hidden">
+        <div class="container text-center d-flex justify-content-around text-3xl p-2"> 
+          <p id="weatherday"> Sunday </p> 
+          <p id="weatherdata"> 6 Aug </p>
+        </div>
+        <hr>
+        <div class="container degree p-5">
+          <h2 id="thecity"> Cairo </h2>
+          <div class="d-flex">
+            <p id="TheDeg">34</p>
+            <i>&#8451;</i> 
+          </div>
+          <div id="Icon">
+            <i  class="text-3xl"> &#9728; </i>
+          </div>
+          <h3 id="theWeth"> Sunny </h3>
+          <div class="d-flex ">
+            <div class="me-3 d-flex"> <span class="bi bi-umbrella"></span><H6 class="ms-2" id="infosun">20%</H6> </div>
+            <div class="me-3 d-flex"> <span class="bi bi-wind"></span><H6 class="ms-2" id="infowind">20%</H6> </div>
+            <div class="d-flex"> <span class="bi bi-compass"></span><H6 class="ms-2" id="infocom">20%</H6> </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mt-4">
+      <div class="text-center text-black mt-2" >
+        <h2 id="TheNextDay">Monday</h2>
+      </div>
+    </section>
+    <section class="d-flex mt-4 justify-content-center">
+      <div class="bg-blue-100 SHOD w-75 rounded-5 overflow-hidden">
+        <div class="container degree p-5 text-center">
+          <i id="Icon2" class="text-3xl"> &#9728; </i>
+            <div class="d-flex text-center">
+              <p id="TheDeg2b">34</p><i>&#8451;</i>
+            </div>
+            <div class="d-flex text-center smalldeg">
+              <h5 id="TheDeg2s">27.9</h5><H6><i>&#8451;</i></H6>
+            </div>
+          <h3 id="theWeth2"> Sunny </h3>
+        </div>
+      </div>
+    </section>
+    <section class="mt-4">
+      <div class="text-center text-black mt-2" >
+        <h2 id="TheDayAfter">Tuesday</h2>
+      </div>
+    </section>
+    <section class="d-flex mt-4 justify-content-center">
+      <div class="bg-blue-100 SHOD w-75 rounded-5 overflow-hidden">
+        <div class="container degree p-5 text-center">
+          <i id="Icon3" class="text-3xl"> &#9728; </i>
+            <div class="d-flex text-center">
+              <p id="TheDeg3b" >34</p><i>&#8451;</i>
+            </div>
+            <div class="d-flex text-center smalldeg">
+              <h5 id="TheDeg3s">27.9</h5><H6><i>&#8451;</i></H6>
+            </div>
+          <h3 id="theWeth3"> Sunny </h3>
+        </div>
+      </div>
+    </section>
+    <footer class="container-fluid mt-4 p-3 bg-black">
+      <div class="d-flex justify-content-center">
+        <div class="position-relative container text-center">
+          <input class="mt-4 w-75 h-16 p-2 rounded-3" type="search" name="search" id="searchInbut" placeholder="Enter your email to subscribe">
+          <label class=" text-white  rounded-3 p-2 labelflote" for="search"> Subscribe </label>
+        </div>
+      </div>
+      <div class="container p-3">
+        <div> 
+          <ul class="d-flex "> 
+            <li>
+              <a href="www.facebook.com"><span class="bi bi-facebook"></span></a>
+            </li>
+            <li>
+              <a href="www.twitter.com"><span class="bi bi-twitter"></span></a>
+            </li>
+            <li>
+              <a href="www.google.com"><span class="bi bi-google"></span></a>
+            </li>
+            <li>
+              <a href="www.pinterest.com"><span class="bi bi-pinterest"></span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="container p-3 text-white">
+          <p> Copyright 2022 Company Name. Designed by Themezy All rights reserved </p>
+        </div>
+      </div>
+    </footer>
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/js.js"></script>
+  </body>
+</html>
