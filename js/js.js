@@ -22,8 +22,8 @@ searchInbut.addEventListener('keyup', function(e) {
 });
 
 (async function() {
-  var searchInbutvalue = localStorage.getItem('City');
-  Data = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=a403972967674c60812143031230808&q=${searchInbutvalue}&days=7`);
+  searchInbutvalue = localStorage.getItem('City'); // Define searchInbutvalue here
+  Data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=a403972967674c60812143031230808&q=${searchInbutvalue}&days=7`);
   res = await Data.json();
   
   var currentTime = new Date(res.location.localtime);
