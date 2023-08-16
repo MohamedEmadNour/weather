@@ -1,38 +1,31 @@
-var res ; 
+var res;
 var searchInbut = document.querySelector('#searchInbut');
 var searchInputValue = localStorage.getItem("City");
 
-if ( searchInputValue === null) {
+if (searchInputValue === null) {
   searchInputValue = "cairo";
   localStorage.setItem("City", searchInputValue);
 }
-var Data ;
-var formattedDate ;
-var formattedDay ;
-var formattedDay1 ;
-var formattedDay2 ;
-var dataReload ;
+var Data;
+var formattedDate;
+var formattedDay;
+var formattedDay1;
+var formattedDay2;
+var dataReload;
 
-
-
-
-
-searchInbut.addEventListener(`keyup` , function (e) {
-
- if ( e.key == `Enter` ) {
-  searchInbutvalue = searchInbut.value;
-  
-  console.log( searchInbutvalue );
-  localStorage.setItem ( `City` , searchInbutvalue )
-  Reaf()
- }
-}) ;
+searchInbut.addEventListener('keyup', function(e) {
+  if (e.key == 'Enter') {
+    var searchInbutvalue = searchInbut.value;
+    localStorage.setItem('City', searchInbutvalue);
+    Reaf();
+  }
+});
 
 (async function() {
+  var searchInbutvalue = localStorage.getItem('City');
+  Data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=a403972967674c60812143031230808&q=${searchInbutvalue}&days=7`);
+  res = await Data.json();
   
-  Data = await fetch( `http://api.weatherapi.com/v1/forecast.json?key=a403972967674c60812143031230808&q=${searchInbutvalue}&days=7`);
-  res = await Data.json() ;
-  // console.log( res );
   var currentTime = new Date(res.location.localtime);
   var month = (currentTime.getMonth() + 1).toString().padStart(2, '0');
   var day = currentTime.getDate().toString().padStart(2, '0');
@@ -44,18 +37,16 @@ searchInbut.addEventListener(`keyup` , function (e) {
   var Tomorrow2 = new Date(currentTime);
   Tomorrow2.setDate(Tomorrow2.getDate() + 2);
   formattedDay2 = Tomorrow2.toLocaleString('en-US',{ weekday: 'long'});
-  
+
   formattedDay = currentTime.toLocaleString('en-US',{ weekday: 'long'});
   formattedDate = `${month}/${day}`;
   
-  // localStorage.setItem( `AllData` , res )
   DataAfterAwait();
   SteData();
-  
-}) () ;
+})();
 
 function DataAfterAwait() {
-  if ( res == !null ) {
+  if (res !== null) {
     GteData();
   }
 document.querySelector(`#weatherday`).innerHTML = `${formattedDay}` ;
@@ -79,28 +70,18 @@ document.querySelector(`#TheDeg3s`).innerHTML = `${res.forecast.forecastday[2].d
 document.querySelector(`#theWeth3`).innerHTML = `${res.forecast.forecastday[2].day.condition.text}` ;
 
 
-
-} ;
+}
 
 function Reaf() {
-  window.open( `index.html` , `_Self`);
-};
+  window.location.reload(); 
+}
 
-
-function GteData() { 
-
-  if ( Data == null ) {
-    res = JSON.parse( localStorage.getItem( `Defult` ));
+function GteData() {
+  if (res === null) {
+    res = JSON.parse(localStorage.getItem('Defult'));
   }
-
-};
-
+}
 
 function SteData() {
-
-  localStorage.setItem( `Defult` , JSON.stringify(dataReload) );
-  
-};
-
-
-  
+  localStorage.setItem('Defult', JSON.stringify(res));
+}
